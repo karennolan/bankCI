@@ -40,9 +40,9 @@ namespace Bank
         // read-only property
         public double OverdraftLimit
         {
-            get 
+            get
             {
-                return overdraftLimit; 
+                return overdraftLimit;
             }
         }
 
