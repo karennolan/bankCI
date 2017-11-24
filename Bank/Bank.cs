@@ -1,6 +1,7 @@
 ﻿// a bank account - and some unit tests, unit tests in a separate test project
 // VSTS project for CI containing unit tests, code coverage
 // and code quality checks
+// local git repo managed through VS
 
 
 using System;

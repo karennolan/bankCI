@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bank\Bank1.csproj">
-      <Project>{7A490D26-B104-404F-8463-FDB83738A116}</Project>
+      <Project>{7a490d26-b104-404f-8463-fdb83738a116}</Project>
       <Name>Bank1</Name>
     </ProjectReference>
   </ItemGroup>
