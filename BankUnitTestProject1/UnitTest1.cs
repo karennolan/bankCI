@@ -16,7 +16,7 @@ namespace BankTestProject
             //
         }
 
-     
+
         [TestMethod]                                            // a unit test
         public void TestDeposit1()
         {
@@ -36,7 +36,7 @@ namespace BankTestProject
         [TestMethod]
         public void TestDepositAndWithdrawal1()
         {
-            Account acc = new Account(2000);                   
+            Account acc = new Account(2000);
             acc.Deposit(100);
             acc.Withdraw(50);
             acc.Deposit(150);
@@ -46,7 +46,7 @@ namespace BankTestProject
         [TestMethod]
         public void TestDepositAndWithdrawal2()                 // overdraw the account
         {
-            Account acc = new Account(1000);                    
+            Account acc = new Account(1000);
             acc.Deposit(100);
             acc.Withdraw(1000);
             Assert.AreEqual(acc.Balance, -900);
@@ -70,7 +70,7 @@ namespace BankTestProject
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]        
+        [ExpectedException(typeof(ArgumentException))]
         public void TestDepositAndWithdrawal5()
         {
             Account acc = new Account(0);
