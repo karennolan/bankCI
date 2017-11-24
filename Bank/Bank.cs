@@ -1,9 +1,9 @@
 ﻿// a bank account - and some unit tests, unit tests in a separate test project
+// VSTS project for CI containing unit tests, code coverage
+// and code quality checks
+
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Bank
 {
