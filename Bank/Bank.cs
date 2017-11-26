@@ -1,8 +1,6 @@
-﻿// a bank account - and some unit tests, unit tests in a separate test project
-// VSTS project for CI containing unit tests, code coverage
-// and code quality checks
-// local git repo managed through VS
-
+﻿// a bank account
+// Unit Tests
+// Specflow acceptance tests in a separate test project
 
 using System;
 
@@ -14,18 +12,25 @@ namespace Bank
         private double balance;                             // the account balance
         private double overdraftLimit;
 
-        // construct a bank acocunt with specified overdraft limit
-        public Account(double overdraftLimit)
+        // construct a bank acocunt with specified opening
+        // balance and overdraft limit
+        public Account(double balance, double overdraftLimit)
         {
-            if (overdraftLimit >= 0)
+            if (balance >= 0)
             {
-                this.balance = 0;
-                this.overdraftLimit = overdraftLimit;
+                this.balance = balance;
             }
             else
             {
                 throw new ArgumentException("overdraft limit must be >= 0");
             }
+            this.OverdraftLimit = overdraftLimit;
+        }
+
+        // chained
+        public Account() : this(0, 0)
+        {
+
         }
 
         // read-only property
@@ -37,15 +42,25 @@ namespace Bank
             }
         }
 
-        // read-only property
+        // property
         public double OverdraftLimit
         {
-            get
+            get 
             {
                 return overdraftLimit;
             }
+            set
+            {
+                if (value >= 0)
+                {
+                    this.overdraftLimit = value;
+                }
+                else
+                {
+                    throw new ArgumentException("overdraft limit must be >= 0");
+                }
+            }
         }
-
 
         // deposit some money
         public void Deposit(double amount)

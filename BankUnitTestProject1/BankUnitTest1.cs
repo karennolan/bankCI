@@ -1,4 +1,6 @@
-﻿using System;
+﻿// standard unit tests using MSTest
+
+using System;
 using Bank;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;                         // unit testing
@@ -20,7 +22,8 @@ namespace BankTestProject
         [TestMethod]                                            // a unit test
         public void TestDeposit1()
         {
-            Account acc = new Account(5000);                    // 5000 overdraft limit
+            // 0 balance, no overdraft limit
+            Account acc = new Account();                    
             acc.Deposit(100);
             acc.Deposit(200);
             Assert.AreEqual(acc.Balance, 300);
@@ -30,13 +33,13 @@ namespace BankTestProject
         [ExpectedException(typeof(ArgumentException))]           // should throw an ArgumentException (or subclass) otherwise test fails
         public void CreateAccountWithInvalidOverdraftLimit()
         {
-            Account acc = new Account(-5000);                    // -5000 overdraft limit
+            Account acc = new Account(0, -5000);                    // -5000 overdraft limit
         }
 
         [TestMethod]
         public void TestDepositAndWithdrawal1()
         {
-            Account acc = new Account(2000);
+            Account acc = new Account();
             acc.Deposit(100);
             acc.Withdraw(50);
             acc.Deposit(150);
@@ -46,7 +49,7 @@ namespace BankTestProject
         [TestMethod]
         public void TestDepositAndWithdrawal2()                 // overdraw the account
         {
-            Account acc = new Account(1000);
+            Account acc = new Account(0, 1000);
             acc.Deposit(100);
             acc.Withdraw(1000);
             Assert.AreEqual(acc.Balance, -900);
@@ -56,16 +59,15 @@ namespace BankTestProject
         [ExpectedException(typeof(ArgumentException))]
         public void TestDepositAndWithdrawal3()
         {
-            Account acc = new Account(1000);
+            Account acc = new Account(0, 1000);
             acc.Withdraw(2000);                                 // overdraft limit exceeded
-            Assert.Fail();                                      // force failure if this point reached
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestDepositAndWithdrawal4()
         {
-            Account acc = new Account(0);
+            Account acc = new Account();
             acc.Deposit(-100);                                  // must be positive
         }
 
@@ -73,10 +75,9 @@ namespace BankTestProject
         [ExpectedException(typeof(ArgumentException))]
         public void TestDepositAndWithdrawal5()
         {
-            Account acc = new Account(0);
+            Account acc = new Account();
             acc.Deposit(100);
             acc.Withdraw(0);                                    // must be positive
-            Assert.Fail();
         }
 
         // also StringAssert and CollectionAssert
