@@ -5,7 +5,7 @@ using Bank;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;                         // unit testing
 
-namespace BankTestProject
+namespace BankTestProject 
 {
     /// <summary>
     /// Summary description for BankUnitTest

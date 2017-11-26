@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bank\Bank.csproj">
-      <Project>{57571974-ae95-419b-ab8c-87b321c2bf5f}</Project>
+      <Project>{7a490d26-b104-404f-8463-fdb83738a116}</Project>
       <Name>Bank</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,5 +1,5 @@
 ﻿// a bank account
-// Unit Tests
+// Unit tests
 // Specflow acceptance tests in a separate test project
 
 using System;
@@ -27,7 +27,7 @@ namespace Bank
             this.OverdraftLimit = overdraftLimit;
         }
 
-        // chained
+        // chain, 0 balance and overdraft
         public Account() : this(0, 0)
         {
 
@@ -94,6 +94,5 @@ namespace Bank
                 throw new ArgumentException("amount must be > 0");
             }
         }
-
     }
 }
