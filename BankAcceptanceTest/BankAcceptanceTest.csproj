@@ -48,7 +48,7 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SpecRun.SpecFlowPlugin, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.7.0-rc001\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
+      <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.7.0\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,10 +56,10 @@
       <HintPath>..\packages\SpecFlow.2.2.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
     <Reference Include="TechTalk.SpecRun, Version=1.7.0.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.7.0-rc001\lib\net45\TechTalk.SpecRun.dll</HintPath>
+      <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.7.0\lib\net45\TechTalk.SpecRun.dll</HintPath>
     </Reference>
     <Reference Include="TechTalk.SpecRun.Common, Version=1.7.0.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.7.0-rc001\lib\net45\TechTalk.SpecRun.Common.dll</HintPath>
+      <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.7.0\lib\net45\TechTalk.SpecRun.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -78,15 +78,15 @@
     </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
-    <None Include="Withdraw.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Withdraw.feature.cs</LastGenOutput>
-    </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="SpecRunTestProfile_2011_09.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Withdraw.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Withdraw.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

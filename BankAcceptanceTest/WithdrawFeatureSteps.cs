@@ -1,6 +1,6 @@
 ﻿/*1. install SpecFlow extension into VS (and get trial license)
 * 2. add unit test project, add reference to bank project
-* 3. use Nuget to install SpecFlow runner package
+* 3. use Nuget to install SpecRun.SpecFlow package
 * 4. add feature file and write features and scenarios
 * 5. generate steps from feature file
 * 6. complete steps in code
