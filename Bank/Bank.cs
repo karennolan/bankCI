@@ -1,8 +1,10 @@
 ﻿// a bank account
 // Unit tests
+// Componenet tests
 // Specflow acceptance tests in a separate test project
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Bank
 {
@@ -16,15 +18,27 @@ namespace Bank
         // balance and overdraft limit
         public Account(double balance, double overdraftLimit)
         {
-            if (balance >= 0)
+            //THERE WAS A BUG IN THE SYSTEM
+            //IT DID NOT CHECK IF overdraftLimit WAS GREATER THAN 0
+
+            if (balance >= 0)  //execution path 1
             {
                 this.balance = balance;
             }
-            else
+            else  //execution path 3
+            {
+                                            //changed
+                throw new ArgumentException("balance must be >= 0");
+            }
+            //new code
+            if (overdraftLimit >= 0)  //execution path 3
+            {
+                this.overdraftLimit = overdraftLimit;
+            }
+            else  //execution path 4
             {
                 throw new ArgumentException("overdraft limit must be >= 0");
             }
-            this.OverdraftLimit = overdraftLimit;
         }
 
         // chain, 0 balance and overdraft
@@ -65,11 +79,11 @@ namespace Bank
         // deposit some money
         public void Deposit(double amount)
         {
-            if (amount > 0)
+            if (amount > 0) //execution path 1
             {
                 balance += amount;
             }
-            else
+            else //execution path 2
             {
                 throw new ArgumentException("amount must be > 0");
             }
@@ -78,18 +92,18 @@ namespace Bank
         // withdraw some money if sufficient funds
         public void Withdraw(double amount)
         {
-            if (amount > 0)
+            if (amount > 0) 
             {
-                if (balance + overdraftLimit >= amount)
+                if (balance + overdraftLimit >= amount) //execution path 1
                 {
                     balance -= amount;
                 }
-                else
+                else //execution path 2
                 {
                     throw new ArgumentException("Insufficent funds for this transaction");
                 }
             }
-            else
+            else //execution path 3
             {
                 throw new ArgumentException("amount must be > 0");
             }

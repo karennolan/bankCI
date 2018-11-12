@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace BankAcceptanceTest
+namespace BankTestAcceptanceTest
 {
     using TechTalk.SpecFlow;
     

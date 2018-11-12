@@ -12,7 +12,7 @@ using Bank;
 using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BankAcceptanceTest
+namespace BankTestAcceptanceTest
 {
     [Binding]                   // bound to any feature file in project
     public class WithdrawFeatureSteps
